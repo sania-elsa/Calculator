@@ -1,62 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-<div class="calculator">
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" onclick="toggleTheme()"></button>
 
-  <!-- Hidden inputs -->
-  <input type="radio" name="calc" id="btn-c" checked>
-  <input type="radio" name="calc" id="btn-0">
-  <input type="radio" name="calc" id="btn-1">
-  <input type="radio" name="calc" id="btn-2">
-  <input type="radio" name="calc" id="btn-3">
-  <input type="radio" name="calc" id="btn-4">
-  <input type="radio" name="calc" id="btn-5">
-  <input type="radio" name="calc" id="btn-6">
-  <input type="radio" name="calc" id="btn-7">
-  <input type="radio" name="calc" id="btn-8">
-  <input type="radio" name="calc" id="btn-9">
-  <input type="radio" name="calc" id="btn-add">
-  <input type="radio" name="calc" id="btn-sub">
-  <input type="radio" name="calc" id="btn-mul">
-  <input type="radio" name="calc" id="btn-div">
+  <div class="calculator">
+    <!-- Display -->
+    <div class="display"></div>
 
-  <!-- Display -->
-  <div class="display"></div>
+    <!-- Buttons -->
+    <div class="buttons">
+      <!-- Row 1 -->
+      <button class="btn clear" onclick="clearDisplay()" style="grid-column: span 3;">AC</button>
+      <button class="btn op" onclick="addToDisplay('÷')">÷</button>
 
-  <!-- Buttons -->
-  <div class="buttons">
-    <label for="btn-c" class="btn clear">AC</label>
-    <label class="btn op">±</label>
-    <label class="btn op">%</label>
-    <label for="btn-div" class="btn op">÷</label>
+      <!-- Row 2 -->
+      <button class="btn" onclick="addToDisplay('7')">7</button>
+      <button class="btn" onclick="addToDisplay('8')">8</button>
+      <button class="btn" onclick="addToDisplay('9')">9</button>
+      <button class="btn op" onclick="addToDisplay('×')">×</button>
 
-    <label for="btn-7" class="btn">7</label>
-    <label for="btn-8" class="btn">8</label>
-    <label for="btn-9" class="btn">9</label>
-    <label for="btn-mul" class="btn op">×</label>
+      <!-- Row 3 -->
+      <button class="btn" onclick="addToDisplay('4')">4</button>
+      <button class="btn" onclick="addToDisplay('5')">5</button>
+      <button class="btn" onclick="addToDisplay('6')">6</button>
+      <button class="btn op" onclick="addToDisplay('-')">-</button>
 
-    <label for="btn-4" class="btn">4</label>
-    <label for="btn-5" class="btn">5</label>
-    <label for="btn-6" class="btn">6</label>
-    <label for="btn-sub" class="btn op">−</label>
+      <!-- Row 4 -->
+      <button class="btn" onclick="addToDisplay('1')">1</button>
+      <button class="btn" onclick="addToDisplay('2')">2</button>
+      <button class="btn" onclick="addToDisplay('3')">3</button>
+      <button class="btn op" onclick="addToDisplay('+')">+</button>
 
-    <label for="btn-1" class="btn">1</label>
-    <label for="btn-2" class="btn">2</label>
-    <label for="btn-3" class="btn">3</label>
-    <label for="btn-add" class="btn op">+</label>
-
-    <label for="btn-0" class="btn zero">0</label>
-    <label class="btn">.</label>
-    <label class="btn equal">=</label>
+      <!-- Row 5 -->
+      <button class="btn zero" onclick="addToDisplay('0')" style="grid-column: span 2;">0</button>
+      <button class="btn" onclick="addToDisplay('.')">.</button>
+      <button class="btn equal" onclick="calculate()">=</button>
+    </div>
   </div>
 
-</div>
-
+  <script src="script.js"></script>
 </body>
+
 </html>
